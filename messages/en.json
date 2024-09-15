@@ -1,0 +1,12 @@
+{
+  "home": "Home",
+  "Header": {
+    "Nav": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "profile": "Profile",
+      "terms": "Terms"
+    }
+  }
+}

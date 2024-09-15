@@ -1,0 +1,13 @@
+{
+  "home": "الرئيسية",
+  "Header" : {
+    "Nav" : {
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "services": "الخدمات",
+      "profile": "حسابي",
+      "terms": "الشروط"
+    }
+  },
+  "notFound" : "Something Went Wrong !"
+}
