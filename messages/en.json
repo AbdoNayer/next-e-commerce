@@ -8,5 +8,9 @@
       "profile": "Profile",
       "terms": "Terms"
     }
+  },
+  "notFound": {
+    "title": "There is no data for this page",
+    "btn": "Go To Home"
   }
 }

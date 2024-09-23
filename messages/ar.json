@@ -9,5 +9,8 @@
       "terms": "الشروط"
     }
   },
-  "notFound" : "Something Went Wrong !"
+  "notFound" : {
+    "title" : "لا توجد بيانات لهذه الصفحة",
+    "btn" : "الذهاب للرئيسية"
+  }
 }

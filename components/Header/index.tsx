@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { SelectLanguage } from '..';
+import { Link } from '@/navigation';
 
 function index() {
     const t = useTranslations();
@@ -8,13 +9,13 @@ function index() {
         <header className='bg-black p-5'>
             <div className='container'>
                 <div className='flex items-center justify-between'>
-                    <ul className='flex items-center gap-3'>
-                        <li><a href="" className='text-white'>{t('Header.Nav.home')}</a></li>
-                        <li><a href="" className='text-white'>{t('Header.Nav.about')}</a></li>
-                        <li><a href="" className='text-white'>{t('Header.Nav.services')}</a></li>
-                        <li><a href="" className='text-white'>{t('Header.Nav.profile')}</a></li>
-                        <li><a href="" className='text-white'>{t('Header.Nav.terms')}</a></li>
-                    </ul>
+                    <div className='flex items-center gap-3'>
+                        <Link href="/" className="text-white"> {t('Header.Nav.home')} </Link>
+                        <Link href="/about" className="text-white"> {t('Header.Nav.about')} </Link>
+                        <Link href="/contact" className="text-white"> {t('Header.Nav.services')} </Link>
+                        <Link href="/profile" className="text-white"> {t('Header.Nav.profile')} </Link>
+                        <Link href="/login" className="text-white"> {t('Header.Nav.terms')} </Link>
+                    </div>
                     <SelectLanguage />
                 </div>
             </div>

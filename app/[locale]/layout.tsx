@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer, Header } from '@/components';
-import './globals.css';
+import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,10 +16,7 @@ interface RootLayoutProps {
     locale: string;
   };
 }
-export default function RootLayout({
-  children,
-  params: { locale },
-}: Readonly<RootLayoutProps>) {
+export default function RootLayout({children, params: { locale }}: Readonly<RootLayoutProps>) {
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body className={inter.className}>
