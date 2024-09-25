@@ -1,12 +1,20 @@
 {
   "home": "الرئيسية",
   "Header" : {
+    "UpHeader" : {
+      "blog" : "المدونة",
+      "replacementPolicy" : "سياسة الإستبدال",
+      "privacyPolicy" : "سياسة الخصوصية"
+    },
     "Nav" : {
       "home": "الرئيسية",
-      "about": "من نحن",
-      "services": "الخدمات",
-      "profile": "حسابي",
-      "terms": "الشروط"
+      "discounts": "تخفيضات",
+      "womens": "نسائي",
+      "mens": "رجالي",
+      "accessories": "إكسسوارات",
+      "shoes": "أحذية",
+      "reservations": "حجوزات",
+      "digitalProducts": "منتجات رقمية"
     }
   },
   "notFound" : {

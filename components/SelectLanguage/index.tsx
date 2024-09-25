@@ -18,7 +18,7 @@ function index() {
     return (
         <select
             defaultValue={localActive}
-            className='bg-transparent py-2 text-white'
+            className='bg-transparent text-[#727272]'
             onChange={onSelectChange}
             disabled={isPending}
         >
