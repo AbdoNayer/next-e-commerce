@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer, Header } from '@/components';
 import '../globals.css';
+import Provider from '@/providers/provider';
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,12 +18,21 @@ interface RootLayoutProps {
     locale: string;
   };
 }
-export default function RootLayout({children, params: { locale }}: Readonly<RootLayoutProps>) {
+export default function RootLayout({ children, params: { locale } }: Readonly<RootLayoutProps>) {
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <body className={inter.className}>
         <Header />
-        <section className='min-h-[500px]'>{children}</section>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <section className='min-h-[500px]'>
+            {children}
+          </section>
+        </ThemeProvider>
         <Footer />
       </body>
     </html>

@@ -1,18 +1,22 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 
 function index() {
   const t = useTranslations();
   return (
-    <footer className='bg-black p-5'>
+    <footer className='bg-black p-7'>
       <div className='container'>
-        <ul className='flex items-center justify-center gap-3'>
-          <li><a href="" className='text-white'>{t('Header.Nav.home')}</a></li>
-          <li><a href="" className='text-white'>{t('Header.Nav.about')}</a></li>
-          <li><a href="" className='text-white'>{t('Header.Nav.services')}</a></li>
-          <li><a href="" className='text-white'>{t('Header.Nav.profile')}</a></li>
-          <li><a href="" className='text-white'>{t('Header.Nav.terms')}</a></li>
-        </ul>
+        <div className='flex items-center justify-center gap-8'>
+          <Link href="/" className="text-[#4971FA]"> {t('Header.Nav.home')} </Link>
+          <Link href="/about" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.discounts')} </Link>
+          <Link href="/contact" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.womens')} </Link>
+          <Link href="/profile" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.mens')} </Link>
+          <Link href="/login" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.accessories')} </Link>
+          <Link href="/login" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.shoes')} </Link>
+          <Link href="/login" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.reservations')} </Link>
+          <Link href="/login" className="text-white hover:text-[#4971FA]"> {t('Header.Nav.digitalProducts')} </Link>
+        </div>
       </div>
     </footer>
   )

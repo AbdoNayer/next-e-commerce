@@ -3,6 +3,8 @@
 import { ChangeEvent, useTransition } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { GrLanguage } from "react-icons/gr";
+
 
 function index() {
     const [isPending, startTransition] = useTransition();
@@ -16,15 +18,18 @@ function index() {
         });
     };
     return (
-        <select
-            defaultValue={localActive}
-            className='bg-transparent text-[#727272]'
-            onChange={onSelectChange}
-            disabled={isPending}
-        >
-            <option value='ar' className='text-black'>Arabic</option>
-            <option value='en' className='text-black'>English</option>
-        </select>
+        <div className='flex items-center gap-1'>
+            <GrLanguage size={16} />
+            <select
+                defaultValue={localActive}
+                className='bg-transparent text-[#727272] text-[15px]'
+                onChange={onSelectChange}
+                disabled={isPending}
+            >
+                <option value='ar' className='text-black text-[14px]'>Arabic</option>
+                <option value='en' className='text-black text-[14px]'>English</option>
+            </select>
+        </div>
     )
 }
 

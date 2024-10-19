@@ -1,3 +1,4 @@
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
 export { default as SelectLanguage } from "./SelectLanguage";
+export { default as ThemeSwitcher } from "./ThemeSwitcher";
