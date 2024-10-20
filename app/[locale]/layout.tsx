@@ -25,8 +25,6 @@ export default function RootLayout({ children, params: { locale } }: Readonly<Ro
         <Header />
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
           disableTransitionOnChange
         >
           <section className='min-h-[500px]'>

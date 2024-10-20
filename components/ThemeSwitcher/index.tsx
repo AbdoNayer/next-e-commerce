@@ -8,31 +8,45 @@ import { useTheme } from "next-themes";
 
 export default function index() {
 
-    const [mounted, setMounted ] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const { theme, setTheme, resolvedTheme } = useTheme()
 
     useEffect(() => {
+        // Check local storage on mount
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            setTheme(storedTheme);
+            document.documentElement.classList.add(storedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('light');
+            document.documentElement.classList.add('light');
+            localStorage.setItem('theme', 'light');
+        }
         setMounted(true);
-        setTheme("dark")
     }, []);
 
-    console.log('theme', theme)
-    console.log('resolvedTheme', resolvedTheme)
-    console.log('mounted', mounted)
+    const toggleTheme = (newTheme: any) => {
+        setTheme(newTheme);
+        document.documentElement.classList.add(newTheme);
+        localStorage.setItem('theme', newTheme);
+        window.location.reload();
+    };
 
-    if(!mounted) return null;
+    console.log('theme', theme)
+
+    if (!mounted) return null;
 
     return (
         <>
             <div className="flex items-center gap-4">
-                <button onClick={() => setTheme('light')}>Light Mode</button>
-                <button onClick={() => setTheme('dark')}>Dark Mode</button>
-                {/* <button className="" onClick={() => setTheme("light")}>
-                    <IoIosMoon />
+                <button className="" onClick={() => toggleTheme((!localStorage.getItem('theme') || localStorage.getItem('theme') === 'light') ? "dark" : "light")}>
+                    {
+                        (!localStorage.getItem('theme') || localStorage.getItem('theme') === 'light') ?
+                            <IoIosMoon />
+                            :
+                            <LuSun />
+                    }
                 </button>
-                <button className="" onClick={() => setTheme("light")}>
-                    <LuSun />
-                </button> */}
             </div>
         </>
     )
