@@ -21,16 +21,16 @@ export default function RootLayout({ children, params: { locale } }: Readonly<Ro
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <body className={inter.className}>
-        <Header />
         <ThemeProvider
           attribute="class"
           disableTransitionOnChange
         >
+          <Header />
           <section className='min-h-[500px]'>
             {children}
           </section>
+          <Footer />
         </ThemeProvider>
-        <Footer />
       </body>
     </html>
   );
