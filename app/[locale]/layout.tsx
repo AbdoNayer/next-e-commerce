@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { Footer, Header } from '@/components';
-import '../globals.css';
-import { ThemeProvider } from 'next-themes';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Footer, Header } from "@/components";
+import "../globals.css";
+import { ThemeProvider } from "next-themes";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'E-Commerce',
-  description: 'E-Commerce App',
+  title: "E-Commerce",
+  description: "E-Commerce App",
 };
 
 interface RootLayoutProps {
@@ -17,19 +17,21 @@ interface RootLayoutProps {
     locale: string;
   };
 }
-export default function RootLayout({ children, params: { locale } }: Readonly<RootLayoutProps>) {
+export default function RootLayout({
+  children,
+  params: { locale },
+}: Readonly<RootLayoutProps>) {
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          disableTransitionOnChange
-        >
-          <Header />
-          <section className='min-h-[500px]'>
-            {children}
-          </section>
-          <Footer />
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          {/* <Header /> */}
+          <section className="min-h-[500px]">{children}</section>
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>

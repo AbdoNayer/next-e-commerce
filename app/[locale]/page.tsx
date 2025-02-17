@@ -1,10 +1,19 @@
-import { useTranslations } from 'next-intl';
+"use client";
 
-export default function Home() {
-    const t = useTranslations();
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-9">
-            <h4 className="text-[30px]">{t('home')}</h4>
-        </div>
-    );
+import { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
+
+export default function RootPage() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const checkUser = localStorage.getItem("user");
+
+    const lang = pathname.split("/")[1] || "en";
+
+    router.push(checkUser ? `/${lang}/home` : `/${lang}/login`);
+  }, [pathname]);
+
+  return null;
 }

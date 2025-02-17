@@ -5,7 +5,7 @@ function Login() {
   const t = useTranslations();
   return (
     <div>
-      {/* <h1>{t('login')}</h1> */}
+      <h1>{t('Header.UpHeader.blog')}</h1>
       <h1 className='text-center'>Login</h1>
     </div>
   )
